@@ -38,6 +38,7 @@ public class CustomerService {
 
     public List<Customer> findAllCustomers(Pageable pageable) {
         return customerRepository.findAll(pageable).getContent();
+
     }
 
     public Customer deleteCustomer(Long id) {

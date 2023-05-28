@@ -9,6 +9,7 @@ import com.rest.demo.service.CustomerService;
 import com.rest.demo.validator.CustomerValidator;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -47,10 +48,10 @@ public class CustomerController {
     }
 
     @GetMapping("")
-    public ResponseEntity<?> getAllCustomers(@RequestParam(defaultValue = "0") int page,
+    public ResponseEntity<?> getAllCustomers(@RequestParam(defaultValue = "1") int page,
                                           @RequestParam(defaultValue = "10") int pageSize) {
         try {
-            Pageable pageable = PageRequest.of(page-1, pageSize);
+            Pageable pageable = PageRequest.of(page-1, pageSize, Sort.by(Sort.Direction.ASC, "id"));
             return ResponseEntity.status(HttpStatus.OK)
                     .body(customerConverter
                             .toResponse(ResponseEnum.SUCCESS.getMessage(), customerService.findAllCustomers(pageable)));
@@ -96,7 +97,7 @@ public class CustomerController {
         }
     }
 
-    @DeleteMapping("")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable("id") Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK)

@@ -15,10 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -141,7 +138,7 @@ public class CustomerControllerTest {
         customerList.add(customer4);
 
         List<Customer> customerListPage0 = customerList.subList(0,2);
-        Pageable page = PageRequest.of(0, 2);
+        Pageable page = PageRequest.of(0, 2, Sort.by(Sort.Direction.ASC, "id"));
 
         when(customerService.findAllCustomers(page)).thenReturn(customerListPage0);
 
@@ -154,7 +151,7 @@ public class CustomerControllerTest {
 
     @Test
     public void getAllCustomers_givenException_thenReturnInternalServerError() {
-        Pageable page = PageRequest.of(0, 2);
+        Pageable page = PageRequest.of(0, 2, Sort.by(Sort.Direction.ASC, "id"));
         String errorMessage = "Something went wrong";
         RuntimeException exception = new RuntimeException(errorMessage);
         errorResponse.setMessage(errorMessage);
