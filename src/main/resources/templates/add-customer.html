@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer Form</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div class="title">
+    <h1>Add Customer</h1>
+</div>
+
+<div class="container">
+    <form th:object="${customer}" method="post" action="/customer/save-add">
+        <div>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name" th:field="*{name}" />
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <br>
+            <input type="text" id="address" th:field="*{address}" />
+        </div>
+        <div>
+            <label for="birthdate">Birthdate:</label>
+            <br>
+            <input type="date" id="birthdate" th:field="*{birthdate}" />
+        </div>
+        <br>
+        <div>
+            <button type="submit">Save Customer</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

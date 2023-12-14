@@ -1,0 +1,114 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: white;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.container {
+    position: absolute;
+    padding: 4vw 10vw 0vw 9vw;
+}
+
+.title {
+    color: black;
+    text-align: center;
+}
+
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders into a single border */
+    margin-bottom: 20px; /* Add some spacing at the bottom */
+}
+
+/* Apply styles to table headers */
+th, td {
+    border: 1px solid #dddddd; /* Set border for cells */
+    padding: 8px; /* Add padding for better spacing */
+    text-align: left; /* Align text to the left */
+}
+
+/* Apply alternate background color to table rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    overflow: hidden;*/
+/*    box-shadow: 0 0 20px rgba(0,0,0,0.1);*/
+/*}*/
+
+/*th,*/
+/*td {*/
+/*    padding: 15px;*/
+/*    background-color: rgba(255,255,255,0.2);*/
+/*    color: black;*/
+/*}*/
+
+/*th {*/
+/*    text-align: left;*/
+/*}*/
+
+/*thead {*/
+/*    th {*/
+/*        background-color: #55608f;*/
+/*    }*/
+/*}*/
+
+/*tbody {*/
+/*    tr {*/
+/*        &:hover {*/
+/*            background-color: rgba(255,255,255,0.3);*/
+/*        }*/
+/*    }*/
+/*    td {*/
+/*        position: relative;*/
+/*        &:hover {*/
+/*            &:before {*/
+/*                content: "";*/
+/*                position: absolute;*/
+/*                left: 0;*/
+/*                right: 0;*/
+/*                top: -9999px;*/
+/*                bottom: -9999px;*/
+/*                background-color: rgba(255,255,255,0.2);*/
+/*                z-index: -1;*/
+/*            }*/
+/*        }*/
+/*    }*/
+/*}*/
+
+label {
+    color: black;
+    font-size: 1.5vw;
+    font-weight: 100;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: black;
+    color: whitesmoke; /* Set text color, adjust as needed */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    border-radius: 5px; /* Adjust the border-radius to control the roundness */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+    cursor: pointer;
+    font-size: 14px; /* Adjust the font size */
+}
+
+button:hover {
+    background-color: #f5f5f5; /* Change background color on hover, optional */
+}

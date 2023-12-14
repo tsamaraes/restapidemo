@@ -18,7 +18,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.ValidationException;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/customer-api")
 public class CustomerController {
     private final CustomerService customerService;
     private final CustomerConverter customerConverter;
